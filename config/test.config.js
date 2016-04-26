@@ -2,7 +2,7 @@ var host = require('network-address')();
 
 module.exports = {
     port: process.env.PORT || process.env.NODE_PORT || 8081,
-    host: host,
+    host: host || process.env.HOST,
     apiVersion: process.env.API_VERSION || 1,
     appUrl: 'http://$(host):$(port)',
     apiUrl: '$(appUrl)/v$(apiVersion)',
